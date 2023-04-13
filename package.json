@@ -1,5 +1,5 @@
 {
-  "name": "vite-vue-starter",
+  "name": "opordo",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -7,10 +7,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "chart.js": "^4.2.1",
+    "apexcharts": "^3.37.3",
     "pinia": "^2.0.34",
     "vue": "^3.2.25",
-    "vue-chartjs": "^5.2.0"
+    "vue3-apexcharts": "^1.4.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",

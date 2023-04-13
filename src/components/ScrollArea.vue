@@ -1,15 +1,24 @@
 <script setup>
-defineProps(['app'])
+import { onMounted, watch, ref } from 'vue';
+
+const appData = defineProps(['app'])
+const scrollAreaEl = ref(null)
+watch(appData.app, data => {
+  // console.log(data.series[0].data.length)
+  if(!data.series[0].data.length) {
+    scrollAreaEl.value.scrollTop = 0
+  }
+})
 </script>
 
 <template>
-  <div class="p-4 pb-0 relative">
+  <div class="p-4 pt-0 relative">
     <!-- <div @scroll="app.updateScrollPos" @click="app.updateScrollPos"
           class="w-full rounded-xl bg-green-50 border-4 border-green-600 border-dashed overflow-auto h-full"> -->
-    <div @scroll="app.updateScrollPos"
+    <div ref="scrollAreaEl" @scroll="app.updateScrollPos"
       class="w-full rounded-xl bg-green-200 overflow-auto h-full">
       <p
-        class="text-l text-green-600 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/50 p-4 rounded">
+        class="text-l text-green-600 pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/50 p-4 rounded">
         scroll here</p>
       <div class="h-[7600px] p-4">
         <h1 class="text-center my-5 mt-2 text-lg">Lorem Ipsum</h1>
