@@ -1,6 +1,6 @@
 <template>
-  <main class="min-h-screen bg-gray-100 p-12">
-    <ScrollArea />
+  <main class="min-h-screen bg-gray-100 flex flex-col">
+    <ScrollArea class="flex-1" />
     <MonitorPanel />
   </main>
 </template>
